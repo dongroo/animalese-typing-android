@@ -5,7 +5,7 @@
 
 ---
 
-> Animalese Typing Keyboard is an Android system keyboard that plays animalese sound effects as you text!
+> Animalese Typing Keyboard is an Android system keyboard that plays animalese sound effects as you text!!
 
 <br/>
 
