@@ -22,24 +22,22 @@
             android:permission="android.permission.BIND_INPUT_METHOD">
 
             <intent-filter>
-                <action android:name="android.view.InputMethod" />
-            </intent-filter>
-            <meta-data
-                android:name="android.view.im"
-                android:resource="@xml/method" />
-        </service>
-
-        <activity
+               <activity
     android:name=".SettingsActivity"
+    android:exported="false" />
+
+<service
+    android:name=".AnimaleseIME"
+    android:permission="android.permission.BIND_INPUT_METHOD"
     android:exported="true">
 
     <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
-        <category android:name="android.intent.category.LAUNCHER"/>
+        <action android:name="android.view.InputMethod" />
     </intent-filter>
 
-</activity>
-
-    </application>
+    <meta-data
+        android:name="android.view.im"
+        android:resource="@xml/method" />
+</service>
 
 </manifest>
