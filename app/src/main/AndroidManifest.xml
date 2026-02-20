@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
@@ -15,29 +16,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnimaleseTyping">
 
+        <!-- 서비스 정의 -->
         <service
             android:name=".AnimaleseIME"
-            android:exported="true"
-            android:label="@string/ime_name"
-            android:permission="android.permission.BIND_INPUT_METHOD">
-
+            android:permission="android.permission.BIND_INPUT_METHOD"
+            android:exported="true">
+            
             <intent-filter>
-               <activity
-    android:name=".SettingsActivity"
-    android:exported="false" />
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
 
-<service
-    android:name=".AnimaleseIME"
-    android:permission="android.permission.BIND_INPUT_METHOD"
-    android:exported="true">
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
 
-    <intent-filter>
-        <action android:name="android.view.InputMethod" />
-    </intent-filter>
-
-    <meta-data
-        android:name="android.view.im"
-        android:resource="@xml/method" />
-</service>
-
+        <!-- 설정 액티비티 정의 -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+    </application>
 </manifest>
