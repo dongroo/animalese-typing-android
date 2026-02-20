@@ -318,6 +318,9 @@ class AnimaleseIME : InputMethodService(), LifecycleOwner, ViewModelStoreOwner, 
 
     override fun onCreate() {
         super.onCreate()
+        
+        AudioPlayer.initialize(this)
+
         audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
         vibrator = getSystemService(Vibrator::class.java)
         vibe = VibrationEffect.createWaveform(
